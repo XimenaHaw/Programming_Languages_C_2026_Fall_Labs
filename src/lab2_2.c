@@ -12,17 +12,22 @@
 */
 
 long long factorial(int n) {
-    // TODO: compute factorial iteratively
-    return 1; // placeholder
+  int x = 1;
+  for (int i = n; i > 0; i--) {
+    x = x * i;
+  }
+  return x;
 }
 
 int main(void) {
-    int n;
+  int n;
 
-    printf("Enter a non-negative integer n: ");
-    scanf("%d", &n);
-
-    // TODO: validate input, call function, print result
-
-    return 0;
+  printf("Enter a non-negative integer n: ");
+  if (scanf("%d", &n) == 1 && n > 0) {
+    long long x = factorial(n);
+    printf("%lld\n", x);
+  } else {
+    printf("Invalid input\n");
+  }
+  return 0;
 }
